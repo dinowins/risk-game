@@ -1,23 +1,23 @@
-const usa = new squareRolls(usa, 50);
-const eu = new squareRolls(eu, 50);
-const southAm = new squareRolls(southAm, 50);
-const africa = new squareRolls(africa, 50);
+// const usa = new squareRolls(usa, 50);
+// const eu = new squareRolls(eu, 50);
+// const southAm = new squareRolls(southAm, 50);
+// const africa = new squareRolls(africa, 50);
 
 export let dice = () => {
     let randomNumber = Math.floor(Math.random() * 6) + 1;
     return randomNumber;
 }
 
-export class squareRolls {
-  constructor(square, numbers) {
-    this.square = square;
-    this.numbers = numbers;
-  }
-
-  selectedSquare() {
-    if ()
-  }
-}
+// export class squareRolls {
+//   constructor(square, numbers) {
+//     this.square = square;
+//     this.numbers = numbers;
+//   }
+//
+//   selectedSquare() {
+//     if ()
+//   }
+// }
 
 
 // export let roll = (first, second) => {
