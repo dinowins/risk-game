@@ -1,7 +1,7 @@
 import { dice } from "./../src/business-logic.js";
 
 describe("Dice", function() {
-  let rolls = dice.roll();
+  let rolls = dice();
 
   it('should add dice total to usa total', function() {
     let usa = 10;

@@ -1,7 +1,4 @@
-export let dice = {
-  sides: 6,
-  roll: function() {
-    let randomNumber = Math.floor(Math.random() * this.sides) + 1;
+export let dice = () => {
+    let randomNumber = Math.floor(Math.random() * 6) + 1;
     return randomNumber;
-  }
 }
