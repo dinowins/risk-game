@@ -1,7 +1,6 @@
-export class newClass {
-
-  constructor(classy) {
-    this.classy= classy;
+export let dice = {
+  sides: 6,
+  roll: function() {
+    let randomNumber = Math.floor(Math.random() * this.sides)
   }
-
 }

@@ -1,3 +1,32 @@
-body {
-  background-color: #fff;
+@mixin squares($color) {
+  background-color: $color;
+  height: 200px;
+  width: 200px;
+  margin-top: 10%;
+  cursor: pointer;
+}
+
+.gridify {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  margin-top: 10%;
+  color: white;
+  text-align: center;
+}
+
+.usa {
+  @include squares(darkblue);
+}
+
+.euro {
+  @include squares(darkgreen);
+}
+
+.south-am {
+  @include squares(darkred);
+}
+
+.afric {
+  @include squares(purple);
 }

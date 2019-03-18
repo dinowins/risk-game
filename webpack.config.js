@@ -19,7 +19,7 @@ module.exports = {
     new UglifyJsPlugin({ sourceMap: true }),
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      title: 'Project Title',
+      title: 'Risk Clone',
       template: './src/index.html',
       inject: 'body'
     })
