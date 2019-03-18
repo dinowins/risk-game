@@ -2,8 +2,14 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/scss/bootstrap.scss';
 import './scss/styles.scss';
-import { newClass } from "./business-logic.js";
+import { dice } from "./../src/business-logic.js";
 
 $(document).ready(function() {
-  console.log("hey, you should buy Ian a beer sometime!");
+  $(".usa").click(function(event) {
+    let roll = dice.roll();
+    let murica = parseInt($("#usa-tot").text());
+    let completeUsa = murica - roll;
+    console.log(completeUsa);
+    $("#usa-tot").text(completeUsa);
+  })
 });
