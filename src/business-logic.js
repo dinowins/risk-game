@@ -1,39 +1,64 @@
-// const usa = new squareRolls(usa, 50);
-// const eu = new squareRolls(eu, 50);
-// const southAm = new squareRolls(southAm, 50);
-// const africa = new squareRolls(africa, 50);
+export let usa = [];
+export let europe = [];
+export let southAm = [];
+export let africa = [];
 
-export let dice = () => {
+export const usaDice = () => {
+    usa = [];
     let randomNumber = Math.floor(Math.random() * 6) + 1;
-    return randomNumber;
+    usa.push(randomNumber);
+}
+export const euroDice = () => {
+    europe = [];
+    let randomNumber = Math.floor(Math.random() * 6) + 1;
+    europe.push(randomNumber);
 }
 
-// export class squareRolls {
-//   constructor(square, numbers) {
-//     this.square = square;
-//     this.numbers = numbers;
-//   }
-//
-//   selectedSquare() {
-//     if ()
-//   }
+export const combat = () => {
+  usaDice();
+  euroDice();
+  if (usa >= europe) {
+    europe = [];
+    europe.push(usa);
+    usa = [];
+  }
+  if (europe >= usa) {
+    usa = [];
+    usa.push(europe);
+    europe = [];
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// export const southDice = () => {
+//     let randomNumber = Math.floor(Math.random() * 6) + 1;
+//     southAm.push(randomNumber);
+// }
+// export const africaDice = () => {
+//     let randomNumber = Math.floor(Math.random() * 6) + 1;
+//     africa.push(randomNumber);
 // }
 
 
-// export let roll = (first, second) => {
-//   let usaRoll = () => {
-//     if (completeUsa >= 1) {
-//       if (completeEurope <= 0) {
-//         clearInterval(usaRoll);
-//       }
-//       $("#usa-tot").text(completeUsa);
-//       let roll = dice();
-//       completeUsa = completeUsa - roll;
-//       console.log("USA roll " + roll);
-//     } else {
-//       clearInterval(usaRoll);
-//       completeUsa = 0;
-//       $("#usa-tot").text(completeUsa);
-//     }
+// export class Player {
+//   constructor (continent, army) {
+//     this.continent = continent;
+//     this.army = army;
 //   }
 // }
