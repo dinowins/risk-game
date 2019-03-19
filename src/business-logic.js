@@ -17,23 +17,25 @@ export const combat = () => {
   europe = [];
   usaDice();
   usaDice();
+  usaDice();
   euroDice();
   euroDice();
   usa.sort(function(a,b){return b-a});
+  usa.pop(usa[2]);
   europe.sort(function(a,b){return b-a});
   let comparisons = () => {
-    if (usa[0] >= europe[0]) {
+    if (usa[0] > europe[0]) {
       europe.push(usa[0]);
     } else {
       usa.push(europe[0]);
     }
-    if (usa[1] >= europe[1]) {
+    if (usa[1] > europe[1]) {
       europe.push(usa[1]);
     } else {
       usa.push(europe[1]);
     }
-    console.log("USA Before shift: " + usa);
-    console.log("Euro Before shift: " + europe);
+    // console.log("USA Before shift: " + usa);
+    // console.log("Euro Before shift: " + europe);
     usa.shift();
     usa.shift();
     europe.shift();

@@ -20,7 +20,7 @@ $(document).ready(function() {
         }
         $("#usa-tot").text(backgroundUsa);
         if (isNaN(usa[0]) && isNaN(usa[1])) {
-            console.log("USA won")
+          void(0);
         } else if (isNaN(usa[1]) && !(isNaN(usa[0]))) {
           backgroundUsa = backgroundUsa - usa[0];
         } else {
@@ -41,7 +41,7 @@ $(document).ready(function() {
         }
         $("#euro-tot").text(backgroundEurope);
         if (isNaN(europe[0]) && isNaN(europe[1])) {
-            console.log("Europe won")
+          void(0);
         } else if (isNaN(europe[1]) && !(isNaN(europe[0]))) {
           backgroundEurope = backgroundEurope - europe[0];
         } else {
