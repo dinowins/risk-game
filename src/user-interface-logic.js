@@ -6,8 +6,8 @@ import { usaDice, euroDice, southDice, africaDice, usa, europe, southAm, africa,
 
 $(document).ready(function() {
   $(".usa").click(function() {
-    let backgroundUsa = 30;
-    let backgroundEurope = 30;
+    let backgroundUsa = 60;
+    let backgroundEurope = 60;
     let combatRoll = setInterval(function() {
       combat();
     }, 1000);
@@ -19,8 +19,13 @@ $(document).ready(function() {
           clearInterval(combatRoll);
         }
         $("#usa-tot").text(backgroundUsa);
-        backgroundUsa = backgroundUsa - usa;
-        console.log("USA: " + backgroundUsa);
+        if (isNaN(usa[0]) && isNaN(usa[1])) {
+            console.log("USA won")
+        } else if (isNaN(usa[1]) && !(isNaN(usa[0]))) {
+          backgroundUsa = backgroundUsa - usa[0];
+        } else {
+          backgroundUsa = backgroundUsa - usa[0] - usa[1];
+        }
       } else {
         clearInterval(usaRoll);
         backgroundUsa = 0;
@@ -35,8 +40,13 @@ $(document).ready(function() {
           clearInterval(combatRoll);
         }
         $("#euro-tot").text(backgroundEurope);
-        backgroundEurope = backgroundEurope - europe;
-        console.log("Europe: " + backgroundEurope);
+        if (isNaN(europe[0]) && isNaN(europe[1])) {
+            console.log("Europe won")
+        } else if (isNaN(europe[1]) && !(isNaN(europe[0]))) {
+          backgroundEurope = backgroundEurope - europe[0];
+        } else {
+          backgroundEurope = backgroundEurope - europe[0] - europe[1];
+        }
       } else {
         clearInterval(europeRoll);
         backgroundEurope = 0;
