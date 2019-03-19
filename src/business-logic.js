@@ -17,16 +17,19 @@ export const euroDice = () => {
 export const combat = () => {
   usaDice();
   euroDice();
+  console.log("USA roll: " + usa);
+  console.log("Europe roll: " + europe);
   if (usa >= europe) {
     europe = [];
     europe.push(usa);
     usa = [];
-  }
-  if (europe >= usa) {
+  } else {
     usa = [];
     usa.push(europe);
     europe = [];
   }
+
+
 }
 
 

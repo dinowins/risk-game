@@ -7,17 +7,20 @@ import { usaDice, euroDice, southDice, africaDice, usa, europe, southAm, africa,
 $(document).ready(function() {
   $(".usa").click(function() {
     let backgroundUsa = 30;
-    let backgroundEurope = 15;
+    let backgroundEurope = 30;
+    let combatRoll = setInterval(function() {
+      combat();
+    }, 1000);
 
     let usaRoll = setInterval(function() {
       if (backgroundUsa >= 1) {
         if (backgroundEurope <= 0) {
           clearInterval(usaRoll);
+          clearInterval(combatRoll);
         }
         $("#usa-tot").text(backgroundUsa);
-        usaDice();
         backgroundUsa = backgroundUsa - usa;
-        console.log("USA roll: " + usa);
+        console.log("USA: " + backgroundUsa);
       } else {
         clearInterval(usaRoll);
         backgroundUsa = 0;
@@ -29,11 +32,11 @@ $(document).ready(function() {
       if (backgroundEurope >= 1) {
         if (backgroundUsa <= 0) {
           clearInterval(europeRoll);
+          clearInterval(combatRoll);
         }
         $("#euro-tot").text(backgroundEurope);
-        euroDice();
         backgroundEurope = backgroundEurope - europe;
-        console.log("Europe roll: " + europe);
+        console.log("Europe: " + backgroundEurope);
       } else {
         clearInterval(europeRoll);
         backgroundEurope = 0;
