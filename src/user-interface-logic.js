@@ -17,6 +17,9 @@ $(document).ready(function() {
         if (backgroundEurope <= 0) {
           clearInterval(usaRoll);
           clearInterval(combatRoll);
+          setTimeout(function() {
+            alert("USA won");
+          }, 1000);
         }
         $("#usa-tot").text(backgroundUsa);
         if (isNaN(usa[0]) && isNaN(usa[1])) {
@@ -38,6 +41,13 @@ $(document).ready(function() {
         if (backgroundUsa <= 0) {
           clearInterval(europeRoll);
           clearInterval(combatRoll);
+          if (backgroundUsa <= 0) {
+            clearInterval(usaRoll);
+            clearInterval(combatRoll);
+            setTimeout(function() {
+              alert("Europe won");
+            }, 1000);
+          }
         }
         $("#euro-tot").text(backgroundEurope);
         if (isNaN(europe[0]) && isNaN(europe[1])) {
