@@ -17,14 +17,14 @@ module.exports = {
   },
 
   plugins: [
-    new Dotenv(),
     new UglifyJsPlugin({ sourceMap: true }),
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       title: 'risk-game',
       template: './src/index.html',
       inject: 'body'
-    })
+    }),
+    new Dotenv()
   ],
 
   module: {

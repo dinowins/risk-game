@@ -4,10 +4,14 @@ import 'bootstrap/scss/bootstrap.scss';
 import './scss/styles.scss';
 import { usaDice, euroDice, southDice, africaDice, usa, europe, southAm, africa, combat } from "./../src/business-logic.js";
 
+let GphApiClient = require('giphy-js-sdk-core');
+let client = GphApiClient(process.env.GIPHY);
+console.log(process.env);
+
 $(document).ready(function() {
   $(".usa").click(function() {
-    let backgroundUsa = 60;
-    let backgroundEurope = 60;
+    let backgroundUsa = 50;
+    let backgroundEurope = 5;
     let combatRoll = setInterval(function() {
       combat();
     }, 1000);
@@ -18,6 +22,17 @@ $(document).ready(function() {
           clearInterval(usaRoll);
           clearInterval(combatRoll);
           setTimeout(function() {
+            client.random('gifs', {})
+              .then((response) => {
+                console.log(response.data);
+                var data = response.data.images.original.gif_url;
+                console.log(data);
+                $(".output").html('<img src="' + data + '" alt="GIF via Giphy">');
+
+              })
+              .catch((err) => {
+
+              })
             alert("USA won");
           }, 1000);
         }
